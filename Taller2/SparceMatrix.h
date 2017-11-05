@@ -1,25 +1,32 @@
 #pragma once
-class SparceMatrix
-{
+#include "NodoMatrix.h"
+#include <istream>
+
+class SparseMatrix {
+
 public:
-	SparceMatrix();//Constructor vacio
-	SparceMatrix(int filas, int columnas);//SparseMatrix(int maxRow, int maxCol)
-	~SparceMatrix();
+	SparseMatrix(int filas, int columnas);
+	//SparseMatrix(int MaxRow,int MaxCol);
 
 	NodoMatrix* getNodoCabecera();
 
-	void insertar(string dato, int fila, int col);
+	void insertar(string dato, int fil, int col);
 	void imprimirMatriz();
 	string operator[](int x);
 	void eliminar(int fila, int col);
 	void mover(int fila1, int col1, int fila2, int col2);
-
 	NodoMatrix**row;
 	NodoMatrix**col;
 
+
+	~SparseMatrix();
+
 private:
 
+
 	NodoMatrix* nodoCabecera;
-	
+
+
 };
+
 
