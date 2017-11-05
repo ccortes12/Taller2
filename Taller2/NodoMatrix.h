@@ -1,21 +1,22 @@
 #pragma once
 #include<istream>
-#include<string>
-
+#include <string>
 using namespace std;
+
 
 struct Triple {
 	int row;
 	int col;
 	string value;
 };
-class NodoMatrix
-{
+
+class NodoMatrix {
+
 	friend class SparseMatrix;
 
 public:
 	NodoMatrix();
-	NodoMatrix(bool b, Triple *t);
+	NodoMatrix(bool b, Triple* t);
 
 	NodoMatrix* getLeft();
 	Triple getTriple();
@@ -23,17 +24,16 @@ public:
 	int getCol();
 	int getRow();
 	string getValue();
-
 	void setUp(NodoMatrix* down);
 	void setLeft(NodoMatrix* right);
-
 	NodoMatrix& operator=(const NodoMatrix& nodo);
 
 	~NodoMatrix();
 
 private:
-	NodoMatrix *up, *left;
+
+	NodoMatrix * up, *left;
 	bool head;
 	union { Triple triple; };
-};
 
+};
