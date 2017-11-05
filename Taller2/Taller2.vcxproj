@@ -150,7 +150,7 @@
     <ClInclude Include="NodoMatrix.h" />
     <ClInclude Include="Piso.h" />
     <ClInclude Include="PisoFragil.h" />
-    <ClInclude Include="SparseMatrix.h" />
+    <ClInclude Include="SparceMatrix.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Util.h" />
@@ -163,7 +163,7 @@
     <ClCompile Include="NodoMatrix.cpp" />
     <ClCompile Include="Piso.cpp" />
     <ClCompile Include="PisoFragil.cpp" />
-    <ClCompile Include="SparseMatrix.cpp" />
+    <ClCompile Include="SparceMatrix.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

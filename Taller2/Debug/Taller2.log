@@ -1,2 +1,6 @@
 ﻿  stdafx.cpp
-c:\users\carlos\source\repos\taller2\taller2\nodomatrix.h(2): fatal error C1014: hay demasiados archivos de inclusión: nivel = 1024
+c:\users\carlos\source\repos\taller2\taller2\pisofragil.h(13): error C3867: 'PisoFragil::habilitado': sintaxis no estándar; utilice  '&' para crear un puntero al miembro
+c:\users\carlos\source\repos\taller2\taller2\sparsematrix.h(1): error C2143: error de sintaxis: falta ';' delante de '<'
+c:\users\carlos\source\repos\taller2\taller2\sparsematrix.h(1): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+c:\users\carlos\source\repos\taller2\taller2\sparsematrix.h(3): error C2143: error de sintaxis: falta ';' delante de '{'
+c:\users\carlos\source\repos\taller2\taller2\sparsematrix.h(3): error C2447: '{': falta el encabezado de función (¿lista formal de estilo anterior?)

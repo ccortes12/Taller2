@@ -1,10 +1,16 @@
 #include "stdafx.h"
-#include "SparseMatrix.h"
-#include "NodoMatrix.h"
+#include "SparceMatrix.h"
+#include"NodoMatrix.h"
 #include<iostream>
 
-SparseMatrix::SparseMatrix(int filas, int columnas) {
 
+
+SparceMatrix::SparceMatrix()
+{
+}
+
+SparceMatrix::SparceMatrix(int filas, int columnas)
+{
 	this->row = new NodoMatrix*[filas];
 	this->col = new NodoMatrix*[columnas];
 	Triple head;
@@ -65,28 +71,28 @@ SparseMatrix::SparseMatrix(int filas, int columnas) {
 
 
 	}
-
-
-
 }
 
 
-NodoMatrix* SparseMatrix::getNodoCabecera() {
+SparceMatrix::~SparceMatrix()
+{
+}
 
+NodoMatrix * SparceMatrix::getNodoCabecera()
+{
 	return this->nodoCabecera;
-
 }
 
-void SparseMatrix::insertar(string dato, int fil, int col) {
-
+void SparceMatrix::insertar(string dato, int fila, int col)
+{
 	Triple t;
-	t.row = fil;
+	t.row = fila;
 	t.col = col;
 	t.value = dato;
 
 	NodoMatrix* nodo = new NodoMatrix(false, &t);
 
-	NodoMatrix* aux = this->row[fil]->left;
+	NodoMatrix* aux = this->row[fila]->left;
 
 	while (aux->left->triple.col > col) {
 
@@ -101,7 +107,7 @@ void SparseMatrix::insertar(string dato, int fil, int col) {
 	}
 	else {
 
-		aux = this->row[fil];
+		aux = this->row[fila];
 
 		while (aux->left->triple.col > col) {
 
@@ -125,8 +131,8 @@ void SparseMatrix::insertar(string dato, int fil, int col) {
 	}
 }
 
-void SparseMatrix::imprimirMatriz() {
-
+void SparceMatrix::imprimirMatriz()
+{
 	int filas = this->nodoCabecera->triple.row;
 
 	for (int i = 1; i <= filas; i++) {
@@ -143,16 +149,15 @@ void SparseMatrix::imprimirMatriz() {
 
 
 	}
-
 }
-string SparseMatrix::operator[](int x) {
 
+string SparceMatrix::operator[](int x)
+{
 	return string();
-
 }
 
-void SparseMatrix::eliminar(int fila, int col) {
-
+void SparceMatrix::eliminar(int fila, int col)
+{
 	NodoMatrix* aux = this->row[fila];
 	NodoMatrix* ant = aux->left;
 
@@ -177,12 +182,10 @@ void SparseMatrix::eliminar(int fila, int col) {
 	auxCol->up = antCol->up;
 
 
-
 }
 
-void SparseMatrix::mover(int fila1, int col1, int fila2, int col2) {
-
-
+void SparceMatrix::mover(int fila1, int col1, int fila2, int col2)
+{
 	NodoMatrix* aux = this->row[fila1];
 
 	while (aux->left->triple.col > col1) {
@@ -204,15 +207,8 @@ void SparseMatrix::mover(int fila1, int col1, int fila2, int col2) {
 	auxiliar->triple.value = aux->left->triple.value;
 	aux->left->triple.value = aux2->left->triple.value;
 	aux2->left->triple.value = auxiliar->triple.value;
-
-
-
 }
 
-SparseMatrix::~SparseMatrix() {
-
-
-}
 
 /*istream& operator>>(istream& is, SparseMatrix& matrix) {
 

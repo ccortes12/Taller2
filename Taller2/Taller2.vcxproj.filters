@@ -35,13 +35,13 @@
     <ClInclude Include="Espada.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="SparseMatrix.h">
+    <ClInclude Include="Util.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="SparceMatrix.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="NodoMatrix.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="Util.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
@@ -70,13 +70,13 @@
     <ClCompile Include="Espada.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="SparseMatrix.cpp">
+    <ClCompile Include="Util.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="SparceMatrix.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="NodoMatrix.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Util.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,80 +1,39 @@
-#include "stdafx.h"
-#include "NodoMatrix.h"
+#pragma once
+#include<istream>
+#include<string>
 
+using namespace std;
 
-NodoMatrix::NodoMatrix() {
-
-}
-
-NodoMatrix::NodoMatrix(bool b, Triple* t) {
-
-	this->head = b;
-
-	if (b) {
-
-		this->left = this;
-		this->up = this;
-		this->triple = *t;
-	}
-	else {
-		this->triple = *t;
-	}
-}
-
-NodoMatrix * NodoMatrix::getLeft() {
-
-	return this->left;
-}
-
-Triple NodoMatrix::getTriple() {
-
-	return this->triple;
-}
-
-NodoMatrix * NodoMatrix::getUp()
+struct Triple {
+	int row;
+	int col;
+	string value;
+};
+class NodoMatrix
 {
-	return this->up;
-}
+	friend class SparseMatrix;
 
-int NodoMatrix::getCol() {
+public:
+	NodoMatrix();
+	NodoMatrix(bool b, Triple *t);
 
-	return this->triple.col;
-}
+	NodoMatrix* getLeft();
+	Triple getTriple();
+	NodoMatrix* getUp();
+	int getCol();
+	int getRow();
+	string getValue();
 
-int NodoMatrix::getRow() {
+	void setUp(NodoMatrix* down);
+	void setLeft(NodoMatrix* right);
 
-	return this->triple.row;
-}
+	NodoMatrix& operator=(const NodoMatrix& nodo);
 
-string NodoMatrix::getValue() {
+	~NodoMatrix();
 
-	return this->triple.value;
-}
+private:
+	NodoMatrix *up, *left;
+	bool head;
+	union { Triple triple; };
+};
 
-void NodoMatrix::setUp(NodoMatrix * down) {
-
-	this->up = down;
-}
-
-void NodoMatrix::setLeft(NodoMatrix * right) {
-
-	this->left = right;
-}
-
-NodoMatrix & NodoMatrix::operator=(const NodoMatrix & nodo) {
-
-	this->head = nodo.head;
-	this->left = nodo.left;
-	this->up = nodo.up;
-	this->triple = nodo.triple;
-	return *this;
-
-}
-
-NodoMatrix::~NodoMatrix() {
-
-	delete up;
-	delete left;
-
-
-}
